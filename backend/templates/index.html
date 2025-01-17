@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>tarefa-backend</title>
+</head>
+<body>
+    <h1>Dados</h1>
+    <table>
+        <thead>
+            <tr>
+                <br>
+                <a href="{{ url_for('create') }}"><button>Criar Novo Registro</button></a>
+                <th>DBN</th>
+                <th>School Name</th>
+                <th>Number of Test Takers</th>
+                <th>Critical Reading Mean</th>
+                <th>Mathematics Mean</th>
+                <th>Writing Mean</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete', dbn=row[0]) }}" method="POST">
+                            <button type="submit">Deletar</button>
+                        </form>
+                        <form action="{{ url_for('update', dbn=row[0]) }}" method="GET">
+                            <button type="submit">Atualizar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

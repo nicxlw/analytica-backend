@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar novo registro</title>
+</head>
+<body>
+    <h1>Criar novo registro</h1>
+    <form action="{{ url_for('create') }}" method="POST">
+        <label for="DBN">DBN:</label><br>
+        <input type="text" id="DBN" name="DBN" required><br><br>
+
+        <label for="School Name">School Name:</label><br>
+        <input type="text" id="School Name" name="School Name" required><br><br>
+
+        <label for="Number of Test Takers">Number of Test Takers:</label><br>
+        <input type="number" id="Number of Test Takers" name="Number of Test Takers" required><br><br>
+
+        <label for="Critical Reading Mean">Critical Reading Mean:</label><br>
+        <input type="number" id="Critical Reading Mean" name="Critical Reading Mean" required><br><br>
+
+        <label for="Mathematics Mean">Mathematics Mean:</label><br>
+        <input type="number" id="Mathematics Mean" name="Mathematics Mean" required><br><br>
+
+        <label for="Writing Mean">Writing Mean:</label><br>
+        <input type="number" id="Writing Mean" name="Writing Mean" required><br><br>
+
+        <button type="submit">Criar</button>
+    </form>
+</body>
+</html>

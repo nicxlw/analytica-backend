@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar registro</title>
+</head>
+<body>
+    <h1>Atualizar registro</h1>
+    <form action="{{ url_for('update', dbn=record[0]) }}" method="POST">
+        <label for="School Name">School Name:</label><br>
+        <input type="text" id="School Name" name="School Name" value="{{ record[1] }}" required><br><br>
+
+        <label for="Number of Test Takers">Number of Test Takers:</label><br>
+        <input type="number" id="Number of Test Takers" name="Number of Test Takers" value="{{ record[2] }}" required><br><br>
+
+        <label for="Critical Reading Mean">Critical Reading Mean:</label><br>
+        <input type="number" id="Critical Reading Mean" name="Critical Reading Mean" value="{{ record[3] }}" required><br><br>
+
+        <label for="Mathematics Mean">Mathematics Mean:</label><br>
+        <input type="number" id="Mathematics Mean" name="Mathematics Mean" value="{{ record[4] }}" required><br><br>
+
+        <label for="Writing Mean">Writing Mean:</label><br>
+        <input type="number" id="Writing Mean" name="Writing Mean" value="{{ record[5] }}" required><br><br>
+
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>
